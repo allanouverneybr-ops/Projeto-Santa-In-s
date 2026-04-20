@@ -4,186 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Santa Inês - Artes Liberais</title>
-    <style>
-        :root {
-            --bg-oxford: #002147; /* Azul Oxford */
-            --bg-creme: #FFFDD0;  /* Creme / Marfim */
-            --card-bg: #ffffff;
-            --accent-color: #B8860B; /* Ouro Velho */
-            --text-dark: #002147;
-            --text-light: #FFFDD0;
-            --border-glow: rgba(184, 134, 11, 0.2);
-        }
+<style>
+    :root {
+        --deep-slate: #1a242f;      /* Estúdio: Azul profundo, moderno e técnico */
+        --paper-white: #fcfaf7;     /* Estudo: Cor de papel de livro antigo, mas limpo */
+        --accent-gold: #b8860b;     /* Clássico: Ouro envelhecido para autoridade */
+        --vibrant-clay: #d35400;    /* Jovialidade: Um toque de cor terrosa e enérgica */
+    }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-creme); 
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
+    body {
+        margin: 0;
+        background-color: var(--paper-white);
+        color: var(--deep-slate);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+    }
 
-        header {
-            padding: 80px 20px 40px;
-            text-align: center;
-            background-color: var(--bg-oxford);
-            color: var(--text-light);
-        }
+    header {
+        padding: 80px 20px;
+        background-color: var(--deep-slate);
+        color: var(--paper-white);
+        text-align: center;
+        border-bottom: 4px solid var(--accent-gold);
+    }
 
-        .motto {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .header-title {
+        font-family: 'Cinzel', serif;
+        font-size: 3rem;
+        letter-spacing: 4px;
+        margin: 0;
+        text-transform: uppercase;
+    }
 
-        .divider {
-            width: 80px;
-            height: 1px;
-            background-color: var(--accent-color);
-            margin: 10px auto 20px;
-        }
+    .header-subtitle {
+        font-family: 'Lora', serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 20px auto 0;
+    }
 
-        .header-title {
-            font-family: 'Cinzel', serif; /* Mantendo a estética clássica */
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-            color: var(--accent-color);
-        }
+    .btn-cta {
+        display: inline-block;
+        background-color: var(--vibrant-clay); /* Cor jovem e vibrante */
+        color: white;
+        padding: 16px 45px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        transition: transform 0.2s, background-color 0.2s;
+    }
 
-        .header-subtitle {
-            font-style: italic;
-            font-family: 'Georgia', serif;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-top: 20px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .btn-cta:hover {
+        background-color: var(--deep-slate);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-        /* VSL / Vídeo ou Imagem de Destaque */
-        .vsl-container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .feature-item {
+        padding: 35px;
+        background: white;
+        border-left: 3px solid var(--accent-gold);
+        box-shadow: 0 10px 30px rgba(26, 36, 47, 0.05); /* Sombra suave de estúdio */
+    }
 
-        .video-placeholder {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 1px solid var(--accent-color);
-        }
-
-        /* CTA */
-        .cta-wrapper {
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 50px;
-        }
-
-        .btn-cta {
-            background-color: var(--bg-oxford);
-            color: var(--accent-color);
-            padding: 22px 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 0; /* Estilo mais clássico/retangular */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid var(--accent-color);
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-oxford);
-            transform: scale(1.02);
-        }
-
-        /* Seções de Conteúdo */
-        .container {
-            background-color: var(--bg-creme);
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--text-dark);
-            text-transform: uppercase;
-        }
-
-        blockquote {
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
-            font-style: italic;
-            margin: 40px 0;
-            color: var(--text-dark);
-            font-family: 'Georgia', serif;
-        }
-
-        /* Mockup / Grid de Matérias */
-        .ebook-section {
-            background-color: rgba(0,33,71,0.03);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: #fff;
-            flex: 1 1 300px;
-            padding: 35px;
-            border-radius: 0;
-            border: 1px solid rgba(0,33,71,0.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-
-        .feature-card h3 {
-            color: var(--accent-color);
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            margin-top: 0;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--bg-oxford);
-            color: var(--text-light);
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        @media (max-width: 600px) {
-            .header-title { font-size: 2.2rem; }
-            .feature-card { flex: 1 1 100%; }
-        }
-    </style>
+    h3 {
+        font-family: 'Cinzel', serif;
+        color: var(--deep-slate);
+        margin-top: 0;
+    }
+</style>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
